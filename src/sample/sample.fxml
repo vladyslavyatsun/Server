@@ -7,20 +7,23 @@
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="5" vgap="30">
 
-    <Text text="               input bytes"
+    <Text text="               receiving bytes"
           GridPane.columnIndex="1" GridPane.rowIndex="1"
           GridPane.columnSpan="2"/>
 
-    <TextField
-            id="code" fx:id="code"
-            GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Button text="Send"
-        GridPane.columnIndex="2" GridPane.rowIndex="2"
-            onAction="#handleSubmitButtonAction"/>
 
-    <Text fx:id="bigDelta"
+    <Text fx:id="blockCode"
+          GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Text fx:id="deltaC"
           GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-    <Text fx:id="smallDelta"
+    <Text fx:id="deltaS"
           GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <Text fx:id="bigDelta"
+    GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <Text fx:id="smallDelta"
+          GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+    <Text fx:id="result"
+          GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
 </GridPane>

@@ -7,9 +7,15 @@ import java.net.Socket;
 /**
  * Created by dog on 6/9/16.
  */
-public class Server {
-    public static void resiveData()    {
-        int port = 6666; // случайный порт (может быть любое число от 1025 до 65535)
+public class Server extends Thread{
+    private Controller controller;
+    public Server(Controller controller){
+        this.controller = controller;
+    }
+
+
+    public void run(){
+        int port = 1488; // случайный порт (может быть любое число от 1025 до 65535)
         try {
             ServerSocket ss = new ServerSocket(port); // создаем сокет сервера и привязываем его к вышеуказанному порту
             System.out.println("Waiting for a client...");
@@ -23,20 +29,26 @@ public class Server {
             OutputStream sout = socket.getOutputStream();
 
             // Конвертируем потоки в другой тип, чтоб легче обрабатывать текстовые сообщения.
-            DataInputStream in = new DataInputStream(sin);
             DataOutputStream out = new DataOutputStream(sout);
-
             ObjectInputStream ois = new ObjectInputStream(sin);
             String line = null;
-            while(true) {
 
+
+            boolean f = true;
+
+
+            while(true) {
                 Data data = (Data) ois.readObject();
-                //// TODO: 6/9/16 start to correction error 
-                out.writeUTF("OK"); // отсылаем клиенту обратно ту самую строку текста.
+                out.writeUTF("Ok"); // отсылаем клиенту обратно ту самую строку текста.
                 out.flush(); // заставляем поток закончить передачу данных.
+                controller.showText(data);
                 System.out.println("Waiting for the next line...");
                 System.out.println();
             }
-        } catch(Exception x) { x.printStackTrace(); }
+        } catch(Exception x) {
+            x.printStackTrace();
+            run(); }
     }
+
+
 }

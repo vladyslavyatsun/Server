@@ -1,9 +1,12 @@
 package sample;
 
+import java.io.Serializable;
+
 /**
  * Created by dog on 6/9/16.
  */
-public class Data {
+public class Data implements Serializable{
+    private static final long serialVersionUID = 1L;
     int [] block;
     int c [];
     int s [];

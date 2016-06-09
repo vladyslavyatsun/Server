@@ -1,0 +1,26 @@
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="5" vgap="30">
+
+    <Text text="               input bytes"
+          GridPane.columnIndex="1" GridPane.rowIndex="1"
+          GridPane.columnSpan="2"/>
+
+    <TextField
+            id="code" fx:id="code"
+            GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button text="Send"
+        GridPane.columnIndex="2" GridPane.rowIndex="2"
+            onAction="#handleSubmitButtonAction"/>
+
+    <Text fx:id="bigDelta"
+          GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Text fx:id="smallDelta"
+          GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+</GridPane>

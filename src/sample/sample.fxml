@@ -1,20 +1,20 @@
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.control.Button?>
+
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="5" vgap="30">
 
-    <Text text="               receiving bytes"
+    <Text text="receiving bytes:"
           GridPane.columnIndex="1" GridPane.rowIndex="1"
           GridPane.columnSpan="2"/>
 
-
     <Text fx:id="blockCode"
-          GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+          GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
+
+    <Text text="deltas:"
+          GridPane.columnIndex="1" GridPane.rowIndex="3"
+          GridPane.columnSpan="2"/>
     <Text fx:id="deltaC"
           GridPane.columnIndex="1" GridPane.rowIndex="4"/>
     <Text fx:id="deltaS"
@@ -23,7 +23,12 @@
     GridPane.columnIndex="1" GridPane.rowIndex="5"/>
     <Text fx:id="smallDelta"
           GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+    <Text text="correct bytes:"
+          GridPane.columnIndex="1" GridPane.rowIndex="6"
+          GridPane.columnSpan="2"/>
+
     <Text fx:id="result"
-          GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+          GridPane.columnIndex="1" GridPane.rowIndex="7"/>
 
 </GridPane>

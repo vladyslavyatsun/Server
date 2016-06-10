@@ -39,7 +39,7 @@ public class Server extends Thread{
 
             while(true) {
                 Data data = (Data) ois.readObject();
-                out.writeUTF("Ok"); // отсылаем клиенту обратно ту самую строку текста.
+                out.writeUTF("success"); // отсылаем клиенту обратно ту самую строку текста.
                 out.flush(); // заставляем поток закончить передачу данных.
                 controller.showText(data);
                 System.out.println("Waiting for the next line...");
